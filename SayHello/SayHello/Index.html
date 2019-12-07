@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script>
+        var url = 'api/Users';
+        $(document).ready(function () {
+            $.getJSON(url).done(function (data) {
+                $.each(data, function (key, item) {
+                    $('<li>', { text: formatItem(item) }).appendTo($('#users'));
+                });
+            });
+        })
+
+        function formatItem(item) {
+            return item.username + '; e-mail:' + item.mail + '; tel:' + item.phone;
+        }
+
+        function find() {
+            var id = $('#userId').val();
+            $.getJSON(url + '/' + id).done(function (data) {
+                $('#users').text(formatItem(data));
+            }).fail(function (jqXHR, textStatus, err) {
+                $('#users').text('ERROR:' + err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Users</h2>
+        <ul id="users"></ul>
+    </div>
+    <div>
+        <h2>Find user</h2>
+        <input type="text" id="userId" size="5" />
+        <input type="button" value="Find" onclick="find()" />
+    </div>
+</body>
+</html>

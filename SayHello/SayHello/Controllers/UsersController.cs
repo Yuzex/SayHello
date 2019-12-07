@@ -26,11 +26,7 @@ namespace SayHello.Controllers
         // GET: api/Users/5
         public IHttpActionResult GetUsersById(int id)
         {
-            var user = (from u in users
-                      where u.userId == id
-                      select new HelloUsers{
-                          userId =u.userId, username=u.username, mail=u.mail, phone=u.phone
-                      });
+            var user = users.FirstOrDefault<HelloUsers>(u => u.userId == id);
             if (user == null)
             {
                 return NotFound();
