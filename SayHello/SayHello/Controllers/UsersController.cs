@@ -10,27 +10,27 @@ namespace SayHello.Controllers
 {
     public class UsersController : ApiController
     {
-        //  Test
-        HelloUsers[] users = new HelloUsers[]
-        {
-            new HelloUsers{ userId=1, username="xiaoming", password="123", mail="111@123.com", phone="13400000000" },
-            new HelloUsers{ userId=2, username="xiaohong", password="111", mail="112@123.com", phone="13400000001" }
-        };
+        ////  TEst
+        //HelloUsers[] users = new HelloUsers[] {
+        //    new HelloUsers { },
+        //    new HelloUsers { },
+        //};
+
+        private Users _users = new Users();
 
         // GET: api/Users
-        public IEnumerable<HelloUsers> GetUsers()
+        public IQueryable<HelloUsers> GetUsers()
         {
+            IQueryable<HelloUsers> users = _users.GetUsers();
             return users;
         }
 
         // GET: api/Users/5
         public IHttpActionResult GetUsersById(int id)
         {
-            var user = users.FirstOrDefault<HelloUsers>(u => u.userId == id);
+            var user = _users.GetUsers(id);
             if (user == null)
-            {
                 return NotFound();
-            }
             return Ok(user);
         }
 

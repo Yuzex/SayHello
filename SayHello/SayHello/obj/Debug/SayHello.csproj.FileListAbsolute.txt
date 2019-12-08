@@ -90,3 +90,8 @@ D:\Source\Repos\SayHello\SayHello\SayHello\obj\Debug\SayHello.csproj.CoreCompile
 D:\Source\Repos\SayHello\SayHello\SayHello\obj\Debug\SayHello.csproj.CopyComplete
 D:\Source\Repos\SayHello\SayHello\SayHello\obj\Debug\SayHello.dll
 D:\Source\Repos\SayHello\SayHello\SayHello\obj\Debug\SayHello.pdb
+D:\Source\Repos\SayHello\SayHello\SayHello\bin\EntityFramework.dll
+D:\Source\Repos\SayHello\SayHello\SayHello\bin\EntityFramework.SqlServer.dll
+D:\Source\Repos\SayHello\SayHello\SayHello\bin\EntityFramework.xml
+D:\Source\Repos\SayHello\SayHello\SayHello\bin\EntityFramework.SqlServer.xml
+D:\Source\Repos\SayHello\SayHello\SayHello\bin\zh-Hans\EntityFramework.resources.dll
